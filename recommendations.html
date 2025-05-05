@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="../static/css/recommendation.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>Recommended Movies</h1>
+    <ul class="movie-list">
+        {% for movie in movies %}
+        <li class="movie-item">
+            <strong>{{ movie.title }}</strong>
+            <div class="description">{{ movie.description }}</div>
+        </li>
+        {% endfor %}
+    </ul>
+    <a class="back-link" href="/">← Back to Home</a>
+</body>
+</html>

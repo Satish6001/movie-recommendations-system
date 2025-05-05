@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="top-bar">
+            <div></div> <!-- placeholder for logo or left side -->
+            <div>
+                {% if user %}
+                    <span>Welcome, {{ user }} | <a href="/logout">Logout</a></span>
+                {% else %}
+                    <a href="/login">Login</a> | <a href="/register">Register</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <h1>🎬 Movie Recommender</h1>
+        <div class="genre-grid">
+            {% for genre in ['Action', 'Drama', 'Sci-Fi', 'Crime', 'Romance', 'Thriller'] %}
+                <form method="POST" action="/recommend">
+                    <input type="hidden" name="genre" value="{{ genre }}">
+                    <button type="submit" class="genre-card">
+                        <img src="{{ url_for('static', filename='images/genre/' + genre|lower + '.jpg') }}" alt="{{ genre }} poster">
+                        {{ genre }}
+                    </button>
+                </form>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

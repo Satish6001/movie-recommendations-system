@@ -1,0 +1,36 @@
+.movie-list {
+    list-style: none;
+    padding: 0;
+}
+
+.movie-item {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.movie-item .description {
+    display: none;
+    margin-top: 5px;
+    color: #555;
+}
+
+.movie-item:hover {
+    background-color: #eef;
+}
+
+.movie-item:hover .description {
+    display: block;
+}
+
+.back-link {
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: #007BFF;
+}
